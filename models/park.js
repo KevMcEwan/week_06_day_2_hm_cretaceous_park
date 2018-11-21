@@ -42,19 +42,12 @@ Park.prototype.visitorsPerDay = function(){
 }
 
 Park.prototype.visitorsPerYear = function(){
-  let total = 0;
-  for (dinosaur of this.dinosaurs){
-    total += dinosaur.guestsAttractedPerDay;
-  }
-  return total*365;
+  return this.visitorsPerDay() * 365;
 }
 
 Park.prototype.revenuePerYear = function(){
-  let total = 0;
-  for (dinosaur of this.dinosaurs){
-    total += dinosaur.guestsAttractedPerDay;
-  }
-  return total*365*this.ticketPrice;
+  return this.ticketPrice * this.visitorsPerYear()
+
 }
 
 
